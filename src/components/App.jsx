@@ -1,15 +1,18 @@
 import userData from './Profile/user.json';
 import data from './Statistics/data.json';
 import friends from './Friends/friends.json';
+import transactions from './TransactionHistory/transactions.json'
 import { Profile } from "./Profile/Profile";
 import { Section } from "./Section/Section";
 import { StatisticsList } from './Statistics/StatisticsList';
+import { FriendList } from './Friends/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 
 export const App = () => {
   return (
     <div>
-<Section title="Profile">
+      <Section title="Profile">
       <Profile 
         username={userData.username}
         tag={userData.tag}
@@ -19,13 +22,23 @@ export const App = () => {
         views={userData.stats.views}
         likes={userData.stats.likes}
         />
-  </Section>
+      </Section>
       
-<Section title="Statistics">
+      <Section title="Statistics">
       <StatisticsList title="Upload stats"
           items={data} 
        />
-</Section>
+      </Section>
+      
+      <Section title="FriendList">
+      <FriendList items={friends} 
+        />
+      </Section>
+
+      <Section title="TransactionHistory">
+      <TransactionHistory items={transactions} 
+        />
+      </Section>
 
     </div>
   );
