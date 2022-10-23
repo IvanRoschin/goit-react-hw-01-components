@@ -1,23 +1,28 @@
 import PropTypes from 'prop-types';
 import defaultImage from '../Profile/defaultUser.jpg';
-
-
+import {
+  FriendIsOnline,
+  FriendIsOffline,
+  FriendAvatar,
+  FriendName,
+} from './FriendListItem.stylized';
 
 export const FriendListItem = ({ avatar = defaultImage, name, isOnline }) => {
-    const ifOnline = {isOnline}
-    return <div className="item">
-            {ifOnline
-                ? <span className="status"></span>
-                : <span className="status"></span>
-            }
-            <img className="avatar" src={avatar ?? defaultImage} alt="User avatar" width="48" />
-            <p className="name">{name}</p>
-    </div>
-
-}
+  return (
+    <>
+      {isOnline === true ? (
+        <FriendIsOnline> </FriendIsOnline>
+      ) : (
+        <FriendIsOffline> </FriendIsOffline>
+      )}
+      <FriendAvatar src={avatar ?? defaultImage} alt="User avatar" width="48" />
+      <FriendName>{name}</FriendName>
+    </>
+  );
+};
 
 FriendListItem.propTypes = {
-    avatar: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    isOnline: PropTypes.bool.isRequired
-}
+  avatar: PropTypes.oneOfType([() => null, PropTypes.object]).isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+};

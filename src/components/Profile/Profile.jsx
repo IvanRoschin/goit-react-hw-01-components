@@ -1,42 +1,63 @@
 import PropTypes from 'prop-types';
 import defaultImage from '../Profile/defaultUser.jpg';
+import { Section } from 'components/Section/Section';
+import {
+  ProfileCard,
+  ProfileDescription,
+  ProfileAvatar,
+  ProfileName,
+  ProfileTag,
+  ProfileLocation,
+  ProfileStats,
+  ProfileStatsItem,
+  ProfileStatsLabel,
+  ProfileStatsQuantity,
+} from './Profile.stylized';
 
-export const Profile = ({username, tag, location, avatar = defaultImage, followers,  views, likes}) => { 
-    return <div className="profile">
-  <div className="description">
-            <img
-                src={avatar ?? defaultImage}
-                alt={username}
-      className="avatar"
-    />
-            <p className="name">{username}</p>
-            <p className="tag">{tag}</p>
-            <p className="location">{location}</p>
-  </div>
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar = defaultImage,
+  followers,
+  views,
+  likes,
+}) => {
+  return (
+    <Section title="Profile">
+      <ProfileCard>
+        <ProfileDescription>
+          <ProfileAvatar src={avatar ?? defaultImage} alt={username} />
+          <ProfileName>{username}</ProfileName>
+          <ProfileTag>@{tag}</ProfileTag>
+          <ProfileLocation>{location}</ProfileLocation>
+        </ProfileDescription>
 
-  <ul className="stats">
-    <li>
-      <span className="label">Followers </span>
-                <span className="quantity">{followers}</span>
-    </li>
-    <li>
-      <span className="label">Views </span>
-                <span className="quantity">{views}</span>
-    </li>
-    <li>
-      <span className="label">Likes </span>
-                <span className="quantity">{likes}</span>
-    </li>
-  </ul>
-</div>
-} 
+        <ProfileStats>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Followers </ProfileStatsLabel>
+            <ProfileStatsQuantity>{followers}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Views </ProfileStatsLabel>
+            <ProfileStatsQuantity>{views}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+          <ProfileStatsItem>
+            <ProfileStatsLabel>Likes </ProfileStatsLabel>
+            <ProfileStatsQuantity>{likes}</ProfileStatsQuantity>
+          </ProfileStatsItem>
+        </ProfileStats>
+      </ProfileCard>
+    </Section>
+  );
+};
 
-Profile.propTypes = { 
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
-    followers: PropTypes.number.isRequired,
-    views: PropTypes.number.isRequired,
-    likes: PropTypes.number.isRequired
-}
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.oneOfType([() => null, PropTypes.object]).isRequired,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
+};

@@ -1,23 +1,29 @@
 import PropTypes from 'prop-types';
-
 import { Statistics } from './Statistics';
+import { Section } from 'components/Section/Section';
+import {
+  StatisticsCard,
+  Title,
+  List,
+  ListItem,
+} from './StatisticsList.stylized';
 
 export const StatisticsList = ({ title, items = [] }) => {
-    return <section className="statistics">
-
-        {title && <h2 className="title">{title}</h2>}
-
-        <ul className="stat-list">
-{items.map(item => (
-        <li key={item.id} className="item">
-          <Statistics
-            label={item.label}
-            percentage={item.percentage}
-          />
-    </li>))}
-        </ul>
-    </section>
-}
+  return (
+    <Section title="Statistics">
+      <StatisticsCard>
+        {title && <Title>{title}</Title>}
+        <List>
+          {items.map(item => (
+            <ListItem key={item.id}>
+              <Statistics label={item.label} percentage={item.percentage} />
+            </ListItem>
+          ))}
+        </List>
+      </StatisticsCard>
+    </Section>
+  );
+};
 
 StatisticsList.propTypes = {
   items: PropTypes.arrayOf(
