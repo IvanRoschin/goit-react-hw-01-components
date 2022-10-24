@@ -29,8 +29,8 @@ export const ListItem = styled.li`
   flex-direction: column;
   width: 25%;
   text-align: center;
-  border: 1px solid #eeeeee;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: ${getRandomHexColor()};
+  border: 1px solpx;
+  padding-bottom: id #eeeeee;
+  padding-top: 20 20px;
+  background-color: ${getRandomHexColor};
 `;
