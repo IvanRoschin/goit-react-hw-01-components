@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ProfileCard = styled.div`
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.md};
-  box-shadow: ${p => p.theme.shadowbox.profile};
+  box-shadow: ${p => p.theme.shadows.profile};
   padding-top: ${p => p.theme.space[4]}px;
   margin-right: auto;
   margin-left: auto;

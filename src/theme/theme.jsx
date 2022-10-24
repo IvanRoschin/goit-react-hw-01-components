@@ -44,7 +44,7 @@ export const theme = Object.freeze({
     lg: '16px',
     round: '50%',
   },
-  shadowbox: {
+  shadows: {
     profile: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;',
   },
 });
