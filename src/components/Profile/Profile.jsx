@@ -3,7 +3,6 @@ import defaultImage from '../Profile/defaultUser.jpg';
 import { Section } from 'components/Section/Section';
 import {
   ProfileCard,
-  ProfileDescription,
   ProfileAvatar,
   ProfileName,
   ProfileTag,
@@ -26,12 +25,10 @@ export const Profile = ({
   return (
     <Section title="Profile">
       <ProfileCard>
-        <ProfileDescription>
-          <ProfileAvatar src={avatar ?? defaultImage} alt={username} />
-          <ProfileName>{username}</ProfileName>
-          <ProfileTag>@{tag}</ProfileTag>
-          <ProfileLocation>{location}</ProfileLocation>
-        </ProfileDescription>
+        <ProfileAvatar src={avatar ?? defaultImage} alt={username} />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTag>@{tag}</ProfileTag>
+        <ProfileLocation>{location}</ProfileLocation>
 
         <ProfileStats>
           <ProfileStatsItem>

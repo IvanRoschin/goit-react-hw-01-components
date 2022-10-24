@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
 
 export const SectionStyle = styled.section`
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #e7ecf2;
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 `;
 
 export const SectionTitle = styled.h2`

@@ -1,54 +1,52 @@
 import styled from '@emotion/styled';
 
 export const ProfileCard = styled.div`
-  background-color: #ffffff;
-  border-radius: 4px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  padding-top: 20px;
+  background-color: ${p => p.theme.colors.white};
+  border-radius: ${p => p.theme.radii.md};
+  box-shadow: ${p => p.theme.shadowbox.profile};
+  padding-top: ${p => p.theme.space[4]}px;
   margin-right: auto;
   margin-left: auto;
   width: 400px;
 `;
 
-export const ProfileDescription = styled.div`
-  width: 400px;
-  padding: 0;
-`;
-
 export const ProfileAvatar = styled.img`
-  border-radius: 50px;
+  border-radius: ${p => p.theme.radii.round};
+  border: ${p => p.theme.borders.normal};
   display: block;
   width: 100px;
   height: 100px;
   margin-right: auto;
   margin-left: auto;
-  margin-bottom: 20px;
+  margin-bottom: ${p => p.theme.space[4]}px;
 `;
 
 export const ProfileName = styled.p`
-  font-size: 22px;
+  font-size: ${p => p.theme.fontSizes.l};
+  font-weight: ${p => p.theme.fontWeights.bold};
   text-align: center;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const ProfileTag = styled.p`
+  font-size: ${p => p.theme.fontSizes.m};
   text-align: center;
-  color: #768696;
-  margin-bottom: 10px;
+  color: ${p => p.theme.colors.graytext};
+  margin-bottom: ${p => p.theme.space[3]}px;
 `;
 
 export const ProfileLocation = styled.p`
+  font-size: ${p => p.theme.fontSizes.m};
   text-align: center;
-  color: #768696;
-  margin-bottom: 20px;
+  color: ${p => p.theme.colors.graytext};
+  margin-bottom: ${p => p.theme.space[5]}px;
 `;
 
 export const ProfileStats = styled.ul`
   display: flex;
   justify-content: space-around;
   text-align: center;
-  background-color: #f3f6f9;
+  background-color: ${p => p.theme.colors.gratbackprim};
 `;
 
 export const ProfileStatsItem = styled.li`
@@ -56,15 +54,18 @@ export const ProfileStatsItem = styled.li`
   flex-direction: column;
   width: 33.4%;
   text-align: center;
-  border: 1px solid #eeeeee;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  border: ${p => `1px solid ${p.theme.colors.gratbacksec}`};
+  padding-top: ${p => p.theme.space[4]}px;
+  padding-bottom: ${p => p.theme.space[4]}px;
 `;
 
 export const ProfileStatsLabel = styled.span`
-  font-weight: bold;
+  font-weight: ${p => p.theme.fontWeights.bold};
+  font-size: ${p => p.theme.fontSizes.s};
+  margin-bottom: ${p => p.theme.space[2]}px;
 `;
 
 export const ProfileStatsQuantity = styled.span`
-  font-weight: normal;
+  font-weight: ${p => p.theme.fontWeights.normal};
+  font-size: ${p => p.theme.fontSizes.m};
 `;

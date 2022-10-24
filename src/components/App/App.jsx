@@ -1,14 +1,14 @@
-import userData from 'components/Profile/user.json';
-import data from 'components/Statistics/data.json';
-import friends from 'components/Friends/friends.json';
-import transactions from 'components/TransactionHistory/transactions.json';
+import userData from 'data/user.json';
+import data from 'data/data.json';
+import friends from 'data/friends.json';
+import transactions from 'data/transactions.json';
 import { Profile } from 'components/Profile/Profile';
 import { StatisticsList } from 'components/Statistics/StatisticsList';
 import { FriendList } from 'components/Friends/FriendList';
 import { TransactionHistory } from 'components/TransactionHistory/TransactionHistory';
 
 import { Global } from '@emotion/react';
-import { GlobalStyle } from 'components/GlobalStyle';
+import { GlobalStyle } from 'theme/GlobalStyle';
 
 export const App = () => {
   return (
