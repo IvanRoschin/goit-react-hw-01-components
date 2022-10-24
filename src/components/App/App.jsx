@@ -24,9 +24,9 @@ export const App = () => {
         likes={userData.stats.likes}
       />
 
-      {/* <StatisticsList title="Upload stats" items={data} />
+      <StatisticsList title="Upload stats" items={data} />
       <FriendList items={friends} />
-      <TransactionHistory items={transactions} /> */}
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
