@@ -30,6 +30,10 @@ export const GlobalStyle = css`
     padding: 0;
   }
 
+  th {
+    font-weight: normal;
+  }
+
   li {
     list-style: none;
   }

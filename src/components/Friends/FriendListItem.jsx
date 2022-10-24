@@ -10,11 +10,7 @@ import {
 export const FriendListItem = ({ avatar = defaultImage, name, isOnline }) => {
   return (
     <>
-      {isOnline === true ? (
-        <FriendIsOnline> </FriendIsOnline>
-      ) : (
-        <FriendIsOffline> </FriendIsOffline>
-      )}
+      {isOnline === true ? <FriendIsOnline /> : <FriendIsOffline />}
       <FriendAvatar src={avatar ?? defaultImage} alt="User avatar" width="48" />
       <FriendName>{name}</FriendName>
     </>

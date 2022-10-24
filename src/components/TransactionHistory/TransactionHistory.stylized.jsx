@@ -11,4 +11,7 @@ export const HeaderOfTable = styled.th`
   color: #fff;
   text-transform: uppercase;
   font-size: 16px;
+  height: 50px;
+  font-weight: bold;
+  border-left: 0;
 `;
