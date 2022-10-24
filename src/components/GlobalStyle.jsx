@@ -1,8 +1,10 @@
 import { css } from '@emotion/react';
+import emotionNormalize from 'emotion-normalize';
 
 // !Global
 
 export const GlobalStyle = css`
+  ${emotionNormalize}
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
